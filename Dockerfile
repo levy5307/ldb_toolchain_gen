@@ -34,9 +34,9 @@ RUN apt-get update \
 
 RUN apt install git --yes --no-install-recommends
 
-RUN wget https://github.com/Kitware/CMake/releases/download/v3.22.1/cmake-3.22.1-linux-x86_64.tar.gz -O /opt/cmake-3.22.1-linux-x86_64.tar.gz
+RUN wget https://github.com/Kitware/CMake/releases/download/v3.22.1/cmake-3.22.1-linux-aarch64.tar.gz -O /opt/cmake-3.22.1-linux-aarch64.tar.gz
 
-RUN wget https://github.com/NixOS/patchelf/releases/download/0.14.3/patchelf-0.14.3-x86_64.tar.gz -O /opt/patchelf-0.14.3-x86_64.tar.gz
+RUN wget https://github.com/NixOS/patchelf/releases/download/0.14.3/patchelf-0.14.3-aarch64.tar.gz -O /opt/patchelf-0.14.3-aarch64.tar.gz
 
 RUN pip3 install setuptools
 
@@ -68,9 +68,9 @@ RUN apt install google-perftools --yes --no-install-recommends
 
 RUN apt install libssl-dev --yes --no-install-recommends
 
-RUN exodus /usr/bin/python3 /usr/bin/curl /usr/bin/gdb /usr/bin/lldb-argdumper-13 /usr/bin/lldb-instr-13 /usr/bin/lldb-server-13 /usr/bin/lldb-vscode-13 /usr/bin/lldb-13 /usr/bin/clangd-13 /usr/bin/clang-tidy-13 /usr/bin/m4 /usr/bin/bison /usr/bin/yacc /usr/bin/flex /usr/bin/pkg-config /usr/bin/as /usr/bin/ld.bfd /usr/bin/clang-cpp-13 /usr/bin/x86_64-linux-gnu-cpp-11 /usr/bin/gcc-ranlib-11 /usr/bin/g++-11 /usr/bin/gcc-ar-11 /usr/bin/gcc-nm-11 /usr/bin/gcc-11 /usr/bin/llvm-objdump-13 /usr/bin/llvm-objcopy-13 /usr/bin/llvm-ranlib-13 /usr/bin/llvm-ar-13 /usr/bin/llvm-nm-13 /usr/bin/clang-13 /usr/bin/lld-13 /usr/bin/ninja /usr/lib/gcc/x86_64-linux-gnu/11/lto1 /usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper /usr/lib/gcc/x86_64-linux-gnu/11/g++-mapper-server /usr/lib/gcc/x86_64-linux-gnu/11/cc1 /usr/lib/gcc/x86_64-linux-gnu/11/cc1plus /usr/lib/gcc/x86_64-linux-gnu/11/collect2 | bash
+RUN exodus /usr/bin/python3 /usr/bin/curl /usr/bin/gdb /usr/bin/lldb-argdumper-13 /usr/bin/lldb-instr-13 /usr/bin/lldb-server-13 /usr/bin/lldb-vscode-13 /usr/bin/lldb-13 /usr/bin/clangd-13 /usr/bin/clang-tidy-13 /usr/bin/m4 /usr/bin/bison /usr/bin/yacc /usr/bin/flex /usr/bin/pkg-config /usr/bin/as /usr/bin/ld.bfd /usr/bin/clang-cpp-13 /usr/bin/aarch64-linux-gnu-cpp-11 /usr/bin/gcc-ranlib-11 /usr/bin/g++-11 /usr/bin/gcc-ar-11 /usr/bin/gcc-nm-11 /usr/bin/gcc-11 /usr/bin/llvm-objdump-13 /usr/bin/llvm-objcopy-13 /usr/bin/llvm-ranlib-13 /usr/bin/llvm-ar-13 /usr/bin/llvm-nm-13 /usr/bin/clang-13 /usr/bin/lld-13 /usr/bin/ninja /usr/lib/gcc/aarch64-linux-gnu/11/lto1 /usr/lib/gcc/aarch64-linux-gnu/11/lto-wrapper /usr/lib/gcc/aarch64-linux-gnu/11/g++-mapper-server /usr/lib/gcc/aarch64-linux-gnu/11/cc1 /usr/lib/gcc/aarch64-linux-gnu/11/cc1plus /usr/lib/gcc/aarch64-linux-gnu/11/collect2 | bash
 
-RUN cp /usr/lib/libsource-highlight.so.4 /opt/exodus/bundles/*/usr/lib/x86_64-linux-gnu/
+RUN cp /usr/lib/libsource-highlight.so.4 /opt/exodus/bundles/*/usr/lib/aarch64-linux-gnu/
 
 COPY generate_toolchain.sh setup_toolchain.sh disable_ld_preload.c /
 
